@@ -3,16 +3,16 @@ import bingo_cell from "./bingo_cell.vue";
 import { ref, onMounted } from "vue";
 import ProgressSpinner from "primevue/progressspinner";
 import Card from "primevue/card";
-import Image from "primevue/image";
 
 const currentLocation = ref();
 const isFunctionFinished = ref(false);
 
 const data = ref({
   1: {
-    location: "7 eleven",
+    location: "7 Eleven",
     lat: 1.3098556201862748,
     lon: 103.86378043003276,
+    range: 1000000000,
     img: "pending.png",
     seq: 1,
     task: {
@@ -109,7 +109,7 @@ const data = ref({
     location: "Rooftop Garden",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "/pic8.PNG",
+    img: "pic8.png",
     range: 1000000000,
     seq: 8,
     task: {
