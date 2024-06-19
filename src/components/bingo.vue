@@ -109,7 +109,7 @@ const data = ref({
     location: "Rooftop Garden",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "/public/pic8.png",
+    img: "/public/pic8.PNG",
     range: 1000000000,
     seq: 8,
     task: {
@@ -231,7 +231,7 @@ onMounted(async () => {
 <template>
 
 
-1111
+2222
   <Card style="width: 90%; margin: auto; margin-top: 20px">
     <template #title
       ><h2><strong>Instructions</strong></h2>
