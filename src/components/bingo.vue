@@ -95,7 +95,7 @@ const data = ref({
     location: "Cold Storage",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "/src/public/pending.png",
+    img: "../public/pending.png",
     range: 1000000000,
     seq: 7,
     task: {
@@ -109,7 +109,7 @@ const data = ref({
     location: "Rooftop Garden",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "/src/public/pic8.png",
+    img: "/public/pic8.png",
     range: 1000000000,
     seq: 8,
     task: {
@@ -223,13 +223,15 @@ onMounted(async () => {
   const sortedDataObject = Object.fromEntries(sortedData);
   data.value = sortedDataObject;
 });
+
+
+
 </script>
 
 <template>
 
 
-
-
+1111
   <Card style="width: 90%; margin: auto; margin-top: 20px">
     <template #title
       ><h2><strong>Instructions</strong></h2>
