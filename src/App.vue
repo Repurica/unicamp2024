@@ -5,8 +5,6 @@ import bing from "./components/bingo.vue";
 
 
 <template>
-  
-
   <bing> </bing>
 </template>
 

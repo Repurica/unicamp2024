@@ -13,8 +13,7 @@ const data = ref({
     location: "7 eleven",
     lat: 1.3098556201862748,
     lon: 103.86378043003276,
-    img: "https://p.sda1.dev/14/7c3d7f9210fc9d5bdaff46fd2decce70/Picture1.png",
-    range: 1000000000,
+    img: "/src/public/pending.png",
     seq: 1,
     task: {
       "Bless someone wearing a cap": 1,
@@ -27,7 +26,7 @@ const data = ref({
     location: "Hajun Korean food stall",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "https://p.sda1.dev/14/7c3d7f9210fc9d5bdaff46fd2decce70/Picture1.png",
+    img: "/src/public/pending.png",
     range: 1000000000,
     seq: 2,
     task: {
@@ -43,9 +42,9 @@ const data = ref({
     location: "Sheltered walkway outside raduga centre",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "https://p.sda1.dev/14/7c3d7f9210fc9d5bdaff46fd2decce70/Picture1.png",
+    img: "/src/public/pending.png",
     range: 1000000000,
-    seq: 2,
+    seq: 3,
     task: {
       "Snap a group selfie with synchronised jump poses reflected in the glass outside the mall": 1,
       "F46: take a group picture with everyone doing different fitspo exercises": 1,
@@ -56,12 +55,13 @@ const data = ref({
     location: "Food Court",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "https://p.sda1.dev/14/7c3d7f9210fc9d5bdaff46fd2decce70/Picture1.png",
+    img: "/src/public/pending.png",
     range: 1000000000,
-    seq: 2,
+    seq: 4,
     task: {
       "LG pictionary (Draw each other in 30 seconds, collate and post on IG)": 1,
-      "Guess the song<br>Voice recording of songs (with wrong tune) will be uploaded onto the app [check with jinming if possible]": 5,
+  
+      "Guess the song<br><br><audio src=\"/src/public/audio1.flac\" controls></audio><br>Voice recording of songs (with wrong tune) will be uploaded onto the app": 5,
     },
   },
 
@@ -69,9 +69,9 @@ const data = ref({
     location: "Playground",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "https://p.sda1.dev/14/7c3d7f9210fc9d5bdaff46fd2decce70/Picture1.png",
+    img: "/src/public/pending.png",
     range: 1000000000,
-    seq: 2,
+    seq: 5,
     task: {
       "Stand up from a sitting position, link hands, and form a circle facing outward)": 3,
     },
@@ -81,9 +81,9 @@ const data = ref({
     location: "Tim Ho Wan",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "https://p.sda1.dev/14/7c3d7f9210fc9d5bdaff46fd2decce70/Picture1.png",
+    img: "/src/public/pending.png",
     range: 1000000000,
-    seq: 2,
+    seq: 6,
     task: {
       
       'Recreate the mannequin poses<br><br><Image alt="user header" src="/src/public/mannequin.png" preview />': 1,
@@ -95,9 +95,9 @@ const data = ref({
     location: "Cold Storage",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "https://p.sda1.dev/14/7c3d7f9210fc9d5bdaff46fd2decce70/Picture1.png",
+    img: "/src/public/pending.png",
     range: 1000000000,
-    seq: 2,
+    seq: 7,
     task: {
       "Match the price challenge<br><ul><li>Hit $49.75</li><li>Take picture of items & price tags which match this total price</li></ul>": 5,
       "3 Cold Storage Product Puns<br><ul><li>Form 3 puns involving cold storage products</li></ul>": 1,
@@ -109,9 +109,9 @@ const data = ref({
     location: "Rooftop Garden",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "https://p.sda1.dev/14/7c3d7f9210fc9d5bdaff46fd2decce70/Picture1.png",
+    img: "/src/public/pic8.png",
     range: 1000000000,
-    seq: 2,
+    seq: 8,
     task: {
       "<b>Human Knot</b><br>\
     Participants stand in a circle, reach across and grab hands with two different\
@@ -226,7 +226,9 @@ onMounted(async () => {
 </script>
 
 <template>
-  <img src="/src/public/mannequin.png">
+
+
+
 
   <Card style="width: 90%; margin: auto; margin-top: 20px">
     <template #title
@@ -242,13 +244,7 @@ onMounted(async () => {
         <li>Please <strong>allow location permission!!</strong></li>
         <li>Click on the image for bigger view</li>
         <li>Must be <strong>near</strong> the location to see the activity</li>
-        <li>Pease follow the sequence!! (from 1 to 9)</li>
         <li>Tech issue telegram <a href="" target="_blank">Jinming</a></li>
-        <li>
-          <strong>* NEW *</strong> Extended range for
-          <strong>6. Gentleness</strong> to make it easier! Yall can find
-          somewhere in school to do it
-        </li>
       </ol>
     </template>
   </Card>

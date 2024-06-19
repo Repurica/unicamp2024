@@ -17,7 +17,7 @@ const props = defineProps({
   distance: Number,
   range: Number,
   seq: Number,
-  task: String,
+  task: Object,
   location: String,
 });
 
@@ -80,6 +80,7 @@ const visible = ref(false);
 
                     <AccordionContent v-if="key == '#photocropchallenge'">
                       <p v-html="key" class="m-0"></p>
+                      <p class="m-0">The video may take a while to load! <a href="https://www.tiktok.com/@sofyank96/video/6992828679541804314">Alternative link</a></p>
                       <tiktok></tiktok>
                     </AccordionContent>
 
