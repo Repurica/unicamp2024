@@ -95,7 +95,7 @@ const data = ref({
     location: "Cold Storage",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "../public/pending.png",
+    img: "/public/pending.png",
     range: 1000000000,
     seq: 7,
     task: {
@@ -109,7 +109,7 @@ const data = ref({
     location: "Rooftop Garden",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "pic8.png",
+    img: "/public/pic8.png",
     range: 1000000000,
     seq: 8,
     task: {
