@@ -13,7 +13,7 @@ const data = ref({
     location: "7 eleven",
     lat: 1.3098556201862748,
     lon: 103.86378043003276,
-    img: "/src/public/pending.png",
+    img: "pending.png",
     seq: 1,
     task: {
       "Bless someone wearing a cap": 1,
@@ -26,7 +26,7 @@ const data = ref({
     location: "Hajun Korean food stall",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "/src/public/pending.png",
+    img: "pending.png",
     range: 1000000000,
     seq: 2,
     task: {
@@ -42,7 +42,7 @@ const data = ref({
     location: "Sheltered walkway outside raduga centre",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "/src/public/pending.png",
+    img: "pending.png",
     range: 1000000000,
     seq: 3,
     task: {
@@ -55,13 +55,13 @@ const data = ref({
     location: "Food Court",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "/src/public/pending.png",
+    img: "pending.png",
     range: 1000000000,
     seq: 4,
     task: {
       "LG pictionary (Draw each other in 30 seconds, collate and post on IG)": 1,
   
-      "Guess the song<br><br><audio src=\"/src/public/audio1.flac\" controls></audio><br>Voice recording of songs (with wrong tune) will be uploaded onto the app": 5,
+      "Guess the song<br><br><audio src=\"audio1.flac\" controls></audio><br>Voice recording of songs (with wrong tune) will be uploaded onto the app": 5,
     },
   },
 
@@ -69,7 +69,7 @@ const data = ref({
     location: "Playground",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "/src/public/pending.png",
+    img: "pending.png",
     range: 1000000000,
     seq: 5,
     task: {
@@ -81,12 +81,12 @@ const data = ref({
     location: "Tim Ho Wan",
     lat: 1.3099300320341885,
     lon: 103.86399232453728,
-    img: "/src/public/pending.png",
+    img: "pending.png",
     range: 1000000000,
     seq: 6,
     task: {
       
-      'Recreate the mannequin poses<br><br><Image alt="user header" src="/src/public/mannequin.png" preview />': 1,
+      'Recreate the mannequin poses<br><br><Image alt="user header" src="mannequin.png" preview />': 1,
       "Add the total price of all the items on tim ho wan menu (Search the menu online, don't crowd the restaurant), use bodies to form the total price of the whole menu.": 3,
     },
   },
