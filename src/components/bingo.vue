@@ -231,7 +231,6 @@ onMounted(async () => {
 <template>
 
 
-2222
   <Card style="width: 90%; margin: auto; margin-top: 20px">
     <template #title
       ><h2><strong>Instructions</strong></h2>
