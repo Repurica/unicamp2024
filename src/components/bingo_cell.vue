@@ -75,7 +75,7 @@ const visible = ref(false);
                       <p style="width: 75%">
                         {{ "Activity " + (Object.keys(task).indexOf(key) + 1) }}
                       </p>
-                      <p style="text-align: right">{{ value }} pts.</p>
+                      <p style="text-align: right;min-width: 55px;">{{ value }} pts.</p>
                     </AccordionHeader>
 
                     <AccordionContent v-if="key == '#photocropchallenge'">

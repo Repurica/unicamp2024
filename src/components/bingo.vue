@@ -61,7 +61,7 @@ const data = ref({
     task: {
       "LG pictionary (Draw each other in 30 seconds, collate and post on IG)": 1,
   
-      "Guess the song<br><br><audio src=\"audio1.flac\" controls></audio><br>Voice recording of songs (with wrong tune) will be uploaded onto the app": 5,
+      "Guess the song<br><br><audio src=\"audio1.flac\" controls style=\"width: 100%;\"></audio><br>Voice recording of songs (with wrong tune) will be uploaded onto the app": 5,
     },
   },
 

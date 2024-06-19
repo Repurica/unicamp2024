@@ -14,7 +14,6 @@ onMounted(() => {
     class="tiktok-embed"
     cite="https://www.tiktok.com/@sofyank96/video/6992828679541804314"
     data-video-id="6992828679541804314"
-    style="width: 300px;"
   >
     <section>
       <a
@@ -53,7 +52,7 @@ onMounted(() => {
 </template>
 
 <style>
-iframe{
-  width: 300px;
+blockquote{
+  width: 100%;
 }
 </style>
