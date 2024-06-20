@@ -22,13 +22,29 @@ const props = defineProps({
 });
 
 const visible = ref(false);
+const accordion_one = ref([]);
+const accordion_status = ref({});
+
+accordion_status.value = Object.keys(props.task).reduce((acc, key) => {
+  acc[key] = false;
+  return acc;
+}, {});
+
+
+function toggleAccordionPanel(key) {
+  accordion_status[key]=!accordion_status[key]
+  if (accordion_status[key]==false) {
+    accordion_one.value.splice(accordion_one.value.indexOf(key), 1);
+  } 
+
+}
 </script>
 
 <template>
   <!-- Your template code here -->
 
   <Card>
-    <template #header >
+    <template #header>
       <Image alt="user header" :src="img" style="" preview />
     </template>
     <template #title>
@@ -68,19 +84,30 @@ const visible = ref(false);
             dismissableMask
           >
             <div class="card">
-              <Accordion :value="['0']" multiple>
-                <template v-for="(value, key) of task">
-                  <AccordionPanel :value="key">
+              <Accordion :value="accordion_one" multiple>
+                <div v-for="(value, key) of task">
+                  <AccordionPanel
+                    :value="key"
+                    @click="toggleAccordionPanel(key)"
+                  >
                     <AccordionHeader class="accordion-header">
                       <p style="width: 75%">
                         {{ "Activity " + (Object.keys(task).indexOf(key) + 1) }}
                       </p>
-                      <p style="text-align: right;min-width: 55px;">{{ value }} pts.</p>
+                      <p style="text-align: right; min-width: 55px">
+                        {{ value }} pts.
+                      </p>
                     </AccordionHeader>
 
                     <AccordionContent v-if="key == '#photocropchallenge'">
                       <p v-html="key" class="m-0"></p>
-                      <p class="m-0">The video may take a while to load! <a href="https://www.tiktok.com/@sofyank96/video/6992828679541804314">Alternative link</a></p>
+                      <p class="m-0">
+                        The video may take a while to load!
+                        <a
+                          href="https://www.tiktok.com/@sofyank96/video/6992828679541804314"
+                          >Alternative link</a
+                        >
+                      </p>
                       <tiktok></tiktok>
                     </AccordionContent>
 
@@ -88,7 +115,7 @@ const visible = ref(false);
                       <p v-html="key" class="m-0"></p>
                     </AccordionContent>
                   </AccordionPanel>
-                </template>
+                </div>
               </Accordion>
             </div>
           </Dialog>
@@ -119,6 +146,4 @@ img {
   height: 100%;
   object-fit: cover;
 }
-
-
 </style>
