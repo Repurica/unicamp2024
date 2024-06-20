@@ -245,7 +245,7 @@ onMounted(async () => {
         <li>Please <strong>allow location permission!!</strong></li>
         <li>Click on the image for bigger view</li>
         <li>Must be <strong>near</strong> the location to see the activity</li>
-        <li>Tech issue telegram <a href="" target="_blank">Jinming</a></li>
+        <li>Tech issue telegram <a href="https://t.me/repurika" target="_blank">Jinming</a></li>
       </ol>
     </template>
   </Card>
@@ -264,7 +264,7 @@ onMounted(async () => {
     <div
       v-for="(item, index) in data"
       :key="item.seq"
-      style="padding: 3px; width: fit-content"
+      style="padding: 3px; width: 95%; "
     >
       <bingo_cell
         :task="item.task"
@@ -281,6 +281,7 @@ onMounted(async () => {
             item.lon
           )
         "
+        style="width: 100%;"
       >
       </bingo_cell>
     </div>

@@ -28,7 +28,7 @@ const visible = ref(false);
   <!-- Your template code here -->
 
   <Card>
-    <template #header>
+    <template #header >
       <Image alt="user header" :src="img" style="" preview />
     </template>
     <template #title>
@@ -100,9 +100,9 @@ const visible = ref(false);
 
 <style>
 .p-card-header {
-  justify-content: 45%;
   display: flex;
-  height: 120px;
+  height: 300px;
+  width: 100%;
 }
 .p-card {
   justify-content: center;
@@ -112,7 +112,7 @@ const visible = ref(false);
   font-size: 1rem;
 }
 .p-image {
-  width: 160px;
+  width: 100%;
 }
 img {
   width: 100%;
