@@ -149,26 +149,6 @@ function haversine(lat1, lon1, lat2, lon2, radius = 6371) {
 }
 
 onMounted(async () => {
-  // if (navigator.geolocation) {
-  //     await navigator.geolocation.getCurrentPosition(
-  //         async (position) => {
-  //             currentLocation.value = {
-  //                 lat: position.coords.latitude,
-  //                 lon: position.coords.longitude
-  //             };
-  //             console.log(currentLocation.value)
-  //             isFunctionFinished.value=true
-
-  //           },
-  //         (error) => {
-  //             console.log(error);
-  //         }
-  //     );
-
-  // } else {
-  // console.error("Geolocation is not supported by this browser.");
-  // }
-
   // Function to handle successful retrieval of location
   function successCallback(position) {
     currentLocation.value = {
@@ -197,22 +177,16 @@ onMounted(async () => {
   // Options for geolocation request
   var options = {
     enableHighAccuracy: true, // Use high-accuracy mode if available
-    timeout: 60000, // Set timeout to 5 seconds
+    timeout: 100, // Set timeout to 5 seconds
     maximumAge: 0, // Do not use cached location
   };
 
   // Start watching for location changes
-  var watchId = navigator.geolocation.watchPosition(
+  navigator.geolocation.watchPosition(
     successCallback,
     errorCallback,
     options
   );
-
-  // debug
-  // currentLocation.value = {
-  //   lat: 1.304380925485879,
-  //   lon: 103.86232678840287,
-  // };
 
   // Sort the data based on seq
   const sortedData = Object.entries(data.value).sort(
