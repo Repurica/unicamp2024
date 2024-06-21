@@ -9,7 +9,8 @@ import AccordionPanel from "primevue/accordionpanel";
 import AccordionHeader from "primevue/accordionheader";
 import AccordionContent from "primevue/accordioncontent";
 
-import tiktok from "./tiktok.vue";
+import tiktok1 from "./tiktok1.vue";
+import tiktok2 from "./tiktok2.vue";
 const props = defineProps({
   // Define your props here
   name: String,
@@ -30,13 +31,11 @@ accordion_status.value = Object.keys(props.task).reduce((acc, key) => {
   return acc;
 }, {});
 
-
 function toggleAccordionPanel(key) {
-  accordion_status[key]=!accordion_status[key]
-  if (accordion_status[key]==false) {
+  accordion_status[key] = !accordion_status[key];
+  if (accordion_status[key] == false) {
     accordion_one.value.splice(accordion_one.value.indexOf(key), 1);
-  } 
-
+  }
 }
 </script>
 
@@ -99,16 +98,47 @@ function toggleAccordionPanel(key) {
                       </p>
                     </AccordionHeader>
 
-                    <AccordionContent v-if="key == '#photocropchallenge'">
+                    <AccordionContent
+                      v-if="
+                        key ==
+                        'Do the #photocropchallenge as a group!<br><br>Reference Video: '
+                      "
+                    >
                       <p v-html="key" class="m-0"></p>
                       <p class="m-0">
-                        The video may take a while to load!
-                        <a
-                          href="https://www.tiktok.com/@sofyank96/video/6992828679541804314"
-                          >Alternative link</a
+                        <small
+                          ><i
+                            >The video may take a while to load!
+                            <a
+                              href="https://www.tiktok.com/@deanobballin24/video/6990776735746772229"
+                              >Alternative link</a
+                            ></i
+                          ></small
                         >
                       </p>
-                      <tiktok></tiktok>
+                      <tiktok1></tiktok1>
+                    </AccordionContent>
+
+
+                    <AccordionContent
+                      v-else-if="
+                        key ==
+                        'As a group, sit down in a circle and face outwards. Link your arms and try to stand up together!<br><br>Reference Video: '
+                      "
+                    >
+                      <p v-html="key" class="m-0"></p>
+                      <p class="m-0">
+                        <small
+                          ><i
+                            >The video may take a while to load!
+                            <a
+                              href="https://www.tiktok.com/@yes933/video/7298195229700656385"
+                              >Alternative link</a
+                            ></i
+                          ></small
+                        >
+                      </p>
+                      <tiktok2></tiktok2>
                     </AccordionContent>
 
                     <AccordionContent v-else>
