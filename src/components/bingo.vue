@@ -31,7 +31,7 @@ const data = ref({
     seq: 2,
     task: {
       "Do the #photocropchallenge as a group!<br><br>Reference Video: ": 1,
-      "Make a haiku including the name of any 3 restaurants in aperia<br><br>\
+      "Make a haiku including the name of any 3 restaurants in aperia!<br><br>\
     (Haikus are a poem of 3 lines, with 5 x 7 x 5 syllables in each line)\
     ": 1,
       "Successfully flip a coin heads 5 times in a row (or tails 5 times in a row)!": 3,
@@ -95,7 +95,7 @@ const data = ref({
     seq: 6,
     task: {
       'Recreate the mannequin poses<br><br><Image alt="user header" src="mannequin.png" preview />': 1,
-      "Add the total price of all the items on the Tim Ho Wan Menu and use your bodies to form this total price! (please google the menu!)": 3,
+      "Add the total price of all the items on the Tim Ho Wan Menu and use your bodies to form this total price! <Strong>(please google the menu!)</Strong>": 3,
     },
   },
 
