@@ -204,7 +204,7 @@ onMounted(async () => {
 <template>
   <Card style="width: 90%; margin: auto; margin-top: 20px">
     <template #title
-      ><h1><strong>Marketplace Quests</strong></h1>
+      ><h1 style="text-align: center;"><strong>Marketplace Quests</strong></h1>
       <h3><strong>Instructions</strong></h3>
     </template>
     <template #content>
