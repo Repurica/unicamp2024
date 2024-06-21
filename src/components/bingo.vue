@@ -124,7 +124,7 @@ const data = ref({
       "Complete the <b>Human Knot Challenge</b> together!<br><br>\
       Human knot: stand in a circle, reach across and grab hands with 2 different people (not adjacent to yourself).\
       Untangle yourselves without letting go of each other's hands!": 3,
-      "One person to piggyback another person and walk from the entrance to this Aperia sign!<br><br><Image alt='user header' src='aperia_sign.jpg' preview />": 1,
+      "One person to piggyback another person and walk from the entrance to this Aperia sign!<br><br><Image alt='user header' src='aperia_sign.png' preview />": 1,
       "As a group, complete 10 pushups, 10 crunches & 10 squats together!": 3,
     },
   },
