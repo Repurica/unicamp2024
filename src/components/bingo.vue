@@ -16,7 +16,7 @@ const data = ref({
     lat: 1.309923836873561,
     lon: 103.8637688698451,
     alt: 15.1,
-    range: 100000000000000,
+    range: 10,
     img: "location1.png",
     seq: 1,
     task: {
@@ -106,7 +106,7 @@ const data = ref({
     seq: 6,
     task: {
       'Recreate the mannequin poses<br><br><Image alt="user header" src="mannequin.png" preview />': 1,
-      "Add the total price of all the items on the Tim Ho Wan Menu and use your bodies to form this total price! <Strong>(please google the menu!)</Strong>": 3,
+      "Add the total price of all the items on the Tim Ho Wan Menu and use your bodies to form this total price!<br><br><Image alt=\"user header\" src=\"TimHoWan.jpg\" preview />": 3,
     },
   },
 
@@ -194,7 +194,7 @@ onMounted(async () => {
     currentLocation.value = {
       lat: position.coords.latitude,
       lon: position.coords.longitude,
-      alt: 16,
+      alt: position.coords.altitude,
     };
     console.log(currentLocation.value);
     isFunctionFinished.value = true;

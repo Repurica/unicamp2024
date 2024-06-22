@@ -52,12 +52,13 @@ function toggleAccordionPanel(key) {
     <template #title>
       <!-- debug -->
 
-      <div v-if="distance <= range">
+      <div v-if="(distance > range || Math.abs(alt - youralt) > 3 && !cheat) && !cheat">
+        {{ name }}
         <!-- <div v-if="!range"> -->
-        {{ location }}
       </div>
       <div v-else>
-        {{ name }}
+        {{ location }}
+
       </div>
     </template>
 
