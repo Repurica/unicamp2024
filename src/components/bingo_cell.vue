@@ -48,9 +48,13 @@ function toggleAccordionPanel(key) {
     </template>
     <template #title>
       <!-- debug -->
+       {{ distance }},{{ range }}
       <div v-if="distance <= range">
         <!-- <div v-if="!range"> -->
         {{ location }}
+      </div>
+      <div v-else>
+        {{ name }}
       </div>
     </template>
 
@@ -61,8 +65,8 @@ function toggleAccordionPanel(key) {
         <!-- <div v-if="!range"> -->
 
         <p class="m-0">
-          It is <strong>{{ distance }}</strong> km away from you! <br />Be
-          <strong>{{ range * 1000 }}</strong> m away from it to get a bingo!
+          It is <strong>{{ distance }}</strong>m away from you! <br />Be
+          <strong>{{ range }}</strong>m away from it to unlock the activities!
         </p>
       </div>
 

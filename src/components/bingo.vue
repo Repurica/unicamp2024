@@ -9,11 +9,12 @@ const isFunctionFinished = ref(false);
 const geodata = ref();
 
 const data = ref({
-  1: {
+  "Location 1": {
     location: "7 Eleven",
-    lat: 1.3098556201862748,
-    lon: 103.86378043003276,
-    range: 1000000000,
+    lat: 1.309923836873561,
+    lon: 103.8637688698451,
+    alt: 15.1,
+    range: 1000,
     img: "location1.png",
     seq: 1,
     task: {
@@ -23,12 +24,13 @@ const data = ref({
     },
   },
 
-  2: {
+  "Location 2": {
     location: "Hajun Korean food stall",
-    lat: 1.3099300320341885,
-    lon: 103.86399232453728,
+    lat: 1.3099282,
+    lon: 103.8640346,
+    alt: 15.1,
     img: "location2.png",
-    range: 1000000000,
+    range: 1000,
     seq: 2,
     task: {
       "Do the #photocropchallenge as a group!<br><br>Reference Video: ": 1,
@@ -40,12 +42,13 @@ const data = ref({
     },
   },
 
-  3: {
+  "Location 3": {
     location: "Sheltered walkway outside raduga centre",
-    lat: 1.3099300320341885,
-    lon: 103.86399232453728,
+    lat: 1.3105362882579732,
+    lon: 103.8632549910819,
+    alt: 13.7,
     img: "location3.png",
-    range: 1000000000,
+    range: 10,
     seq: 3,
     task: {
       "Take a group jump shot in the reflection of the glass outside the mall!": 1,
@@ -53,12 +56,15 @@ const data = ref({
     },
   },
 
-  4: {
+  "Location 4": {
     location: "Food Court",
-    lat: 1.3099300320341885,
-    lon: 103.86399232453728,
+    lat: 1.3100474,
+    lon: 103.8638658,
+    // lat: 1.3098121594991325,
+    // lon: 103.8638804814292,
+    alt: 19.8,
     img: "location4.png",
-    range: 1000000000,
+    range: 10,
     seq: 4,
     task: {
       "Draw each member of your group in 30 seconds! <br>Post it on IG and tag @hopeuni!": 1,
@@ -75,24 +81,26 @@ const data = ref({
     },
   },
 
-  5: {
+  "Location 5": {
     location: "Playground",
-    lat: 1.3099300320341885,
-    lon: 103.86399232453728,
+    lat: 1.3108934,
+    lon: 103.8641684,
+    alt: 15.1,
     img: "location5.png",
-    range: 1000000000,
+    range: 10,
     seq: 5,
     task: {
       "As a group, sit down in a circle and face outwards. Link your arms and try to stand up together!<br><br>Reference Video: ": 3,
     },
   },
 
-  6: {
+  "Location 6": {
     location: "Tim Ho Wan",
-    lat: 1.3099300320341885,
-    lon: 103.86399232453728,
+    lat: 1.3094051226012189,
+    lon: 103.86403375599417,
+    alt: 15.1,
     img: "location6.png",
-    range: 1000000000,
+    range: 10,
     seq: 6,
     task: {
       'Recreate the mannequin poses<br><br><Image alt="user header" src="mannequin.png" preview />': 1,
@@ -100,12 +108,13 @@ const data = ref({
     },
   },
 
-  7: {
+  "Location 7": {
     location: "Cold Storage",
-    lat: 1.3099300320341885,
-    lon: 103.86399232453728,
+    lat: 1.3103638,
+    lon: 103.8639364,
+    alt: 15.1,
     img: "location7.png",
-    range: 1000000000,
+    range: 10,
     seq: 7,
     task: {
       "Find items that add up to $49.75 in total! <br>(show their price tags in submissions)": 5,
@@ -114,12 +123,12 @@ const data = ref({
     },
   },
 
-  8: {
+  "Special Location": {
     location: "Rooftop Garden",
-    lat: 1.3099300320341885,
-    lon: 103.86399232453728,
+    lat: 1.3102614,
+    lon: 103.8641654,
     img: "location8.png",
-    range: 1000000000,
+    range: 10,
     seq: 8,
     task: {
       "Complete the <b>Human Knot Challenge</b> together!<br><br>\
@@ -152,7 +161,7 @@ function haversine(lat1, lon1, lat2, lon2, radius = 6371) {
   // Distance in kilometers (by default)
   const distance = radius * c;
 
-  return Math.round(distance * 1000) / 1000;
+  return Math.round(distance * 1000);
 }
 
 onMounted(async () => {
@@ -160,7 +169,6 @@ onMounted(async () => {
   function successCallback(position) {
     if (geodata.value) {
       const keys = Object.keys(position.coords);
-
 
       for (const key of keys) {
         alert("Location changed!");
@@ -175,7 +183,6 @@ onMounted(async () => {
           }
         }
       }
-
     }
 
     geodata.value = position.coords;
