@@ -20,6 +20,9 @@ const props = defineProps({
   seq: Number,
   task: Object,
   location: String,
+  cheat: Boolean,
+  alt: Number,
+  youralt: Number,
 });
 
 const visible = ref(false);
@@ -48,7 +51,7 @@ function toggleAccordionPanel(key) {
     </template>
     <template #title>
       <!-- debug -->
-       {{ distance }},{{ range }}
+
       <div v-if="distance <= range">
         <!-- <div v-if="!range"> -->
         {{ location }}
@@ -60,8 +63,7 @@ function toggleAccordionPanel(key) {
 
     <template #content>
       <!-- debug -->
-
-      <div v-if="distance > range">
+      <div v-if="distance > range && !cheat">
         <!-- <div v-if="!range"> -->
 
         <p class="m-0">
@@ -69,6 +71,12 @@ function toggleAccordionPanel(key) {
           <strong>{{ range }}</strong>m away from it to unlock the activities!
         </p>
       </div>
+      <div v-else-if="Math.abs(alt - youralt) > 3 && !cheat">
+        <p class="m-0">
+          You are close! Maybe try higher or lower?
+        </p>
+      </div>
+
 
       <div v-else>
         <p class="m-0">

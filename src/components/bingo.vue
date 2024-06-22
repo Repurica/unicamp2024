@@ -3,10 +3,12 @@ import bingo_cell from "./bingo_cell.vue";
 import { ref, onMounted } from "vue";
 import ProgressSpinner from "primevue/progressspinner";
 import Card from "primevue/card";
-
+import Button from "primevue/button";
 const currentLocation = ref();
 const isFunctionFinished = ref(false);
 const geodata = ref();
+const cheat=ref(false);
+
 
 const data = ref({
   "Location 1": {
@@ -14,7 +16,7 @@ const data = ref({
     lat: 1.309923836873561,
     lon: 103.8637688698451,
     alt: 15.1,
-    range: 1000,
+    range: 100000000000000,
     img: "location1.png",
     seq: 1,
     task: {
@@ -30,7 +32,7 @@ const data = ref({
     lon: 103.8640346,
     alt: 15.1,
     img: "location2.png",
-    range: 1000,
+    range: 10,
     seq: 2,
     task: {
       "Do the #photocropchallenge as a group!<br><br>Reference Video: ": 1,
@@ -110,8 +112,10 @@ const data = ref({
 
   "Location 7": {
     location: "Cold Storage",
-    lat: 1.3103638,
-    lon: 103.8639364,
+    // lat: 1.3103638,
+    // lon: 103.8639364,
+    lat: 1.310429918713422,
+    lon: 103.86384749088543,
     alt: 15.1,
     img: "location7.png",
     range: 10,
@@ -125,8 +129,9 @@ const data = ref({
 
   "Special Location": {
     location: "Rooftop Garden",
-    lat: 1.3102614,
-    lon: 103.8641654,
+    lat:  1.3100988274447354,
+    lon: 103.86400251566495,
+    alt: 24.1,
     img: "location8.png",
     range: 10,
     seq: 8,
@@ -189,6 +194,7 @@ onMounted(async () => {
     currentLocation.value = {
       lat: position.coords.latitude,
       lon: position.coords.longitude,
+      alt: 16,
     };
     console.log(currentLocation.value);
     isFunctionFinished.value = true;
@@ -286,6 +292,9 @@ onMounted(async () => {
       </ol>
     </template>
   </Card>
+  <div style="display: flex; justify-content: center;">
+    <Button @click="cheat=!cheat" style="margin-top: 10px;">Cheat</Button>
+  </div>
 
   <div
     v-if="currentLocation"
@@ -306,10 +315,13 @@ onMounted(async () => {
       <bingo_cell
         :task="item.task"
         :location="item.location"
+        :alt="item.alt"
         :img="item.img"
+        :youralt="currentLocation.alt"
         :name="index"
         :seq="item.seq"
         :range="item.range"
+        :cheat="cheat"
         :distance="
           haversine(
             currentLocation.lat,
