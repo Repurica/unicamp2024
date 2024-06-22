@@ -6,6 +6,7 @@ import Card from "primevue/card";
 
 const currentLocation = ref();
 const isFunctionFinished = ref(false);
+const geodata = ref();
 
 const data = ref({
   1: {
@@ -157,6 +158,27 @@ function haversine(lat1, lon1, lat2, lon2, radius = 6371) {
 onMounted(async () => {
   // Function to handle successful retrieval of location
   function successCallback(position) {
+    if (geodata.value) {
+      const keys = Object.keys(position.coords);
+
+
+      for (const key of keys) {
+        alert("Location changed!");
+        const element = document.getElementById(key);
+        if (element) {
+          const newValue = position.coords[key];
+          const oldValue = geodata.value[key];
+          if (newValue !== oldValue) {
+            element.style.color = "red";
+          } else {
+            element.style.color = "";
+          }
+        }
+      }
+
+    }
+
+    geodata.value = position.coords;
     currentLocation.value = {
       lat: position.coords.latitude,
       lon: position.coords.longitude,
@@ -202,9 +224,21 @@ onMounted(async () => {
 </script>
 
 <template>
+  <div v-if="geodata">
+    <p id="latitude">Latitude: {{ geodata.latitude }}</p>
+    <p id="longitude">Longitude: {{ geodata.longitude }}</p>
+    <p id="altitude">Altitude: {{ geodata.altitude }}</p>
+    <p id="accuracy">Accuracy: {{ geodata.accuracy }}</p>
+    <p id="altitudeAccuracy">
+      Altitude Accuracy: {{ geodata.altitudeAccuracy }}
+    </p>
+    <p id="heading">Heading: {{ geodata.heading }}</p>
+    <p id="speed">Speed: {{ geodata.speed }}</p>
+    <p id="timestamp">Timestamp: {{ geodata.timestamp }}</p>
+  </div>
   <Card style="width: 90%; margin: auto; margin-top: 20px">
     <template #title
-      ><h1 style="text-align: center;"><strong>Marketplace Quests</strong></h1>
+      ><h1 style="text-align: center"><strong>Marketplace Quests</strong></h1>
       <h3><strong>Instructions</strong></h3>
     </template>
     <template #content>
