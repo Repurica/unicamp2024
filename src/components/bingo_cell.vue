@@ -23,12 +23,13 @@ const props = defineProps({
   cheat: Boolean,
   alt: Number,
   youralt: Number,
+  activity_img: String,
 });
 
 const visible = ref(false);
 const accordion_one = ref([]);
 const accordion_status = ref({});
-
+const img_preview = ref(false);
 accordion_status.value = Object.keys(props.task).reduce((acc, key) => {
   acc[key] = false;
   return acc;
@@ -39,6 +40,10 @@ function toggleAccordionPanel(key) {
   if (accordion_status[key] == false) {
     accordion_one.value.splice(accordion_one.value.indexOf(key), 1);
   }
+}
+
+function showImage(activity_img) {
+  document.getElementById(activity_img).click();
 }
 </script>
 
@@ -52,13 +57,17 @@ function toggleAccordionPanel(key) {
     <template #title>
       <!-- debug -->
 
-      <div v-if="(distance > range || Math.abs(alt - youralt) > 3 && !cheat) && !cheat">
+      <div
+        v-if="
+          (distance > range || (Math.abs(alt - youralt) > 3 && !cheat)) &&
+          !cheat
+        "
+      >
         {{ name }}
         <!-- <div v-if="!range"> -->
       </div>
       <div v-else>
         {{ location }}
-
       </div>
     </template>
 
@@ -68,16 +77,14 @@ function toggleAccordionPanel(key) {
         <!-- <div v-if="!range"> -->
 
         <p class="m-0">
-          It is <strong>{{ distance }}</strong>m away from you! <br />Be
-          <strong>{{ range }}</strong>m away from it to unlock the activities!
+          It is <strong>{{ distance }}</strong
+          >m away from you! <br />Be <strong>{{ range }}</strong
+          >m away from it to unlock the activities!
         </p>
       </div>
       <div v-else-if="Math.abs(alt - youralt) > 3 && !cheat">
-        <p class="m-0">
-          You are close! Maybe try higher or lower?
-        </p>
+        <p class="m-0">You are close! Maybe try higher or lower?</p>
       </div>
-
 
       <div v-else>
         <p class="m-0">
@@ -96,6 +103,8 @@ function toggleAccordionPanel(key) {
             dismissableMask
           >
             <div class="card">
+
+
               <Accordion :value="accordion_one" multiple>
                 <div v-for="(value, key) of task">
                   <AccordionPanel
@@ -132,7 +141,6 @@ function toggleAccordionPanel(key) {
                       <tiktok1></tiktok1>
                     </AccordionContent>
 
-
                     <AccordionContent
                       v-else-if="
                         key ==
@@ -160,6 +168,36 @@ function toggleAccordionPanel(key) {
                   </AccordionPanel>
                 </div>
               </Accordion>
+              <br />
+              <br />
+
+              <div style="display: flex; justify-content: center">
+                <div style="position: relative">
+                  <Button severity="success" label="View as Image" />
+                  <Image
+                    :id="activity_img"
+                    alt="activity image"
+                    :src="activity_img"
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      opacity: 0;
+                    "
+                    preview
+                  ></Image>
+                </div>
+              </div>
+              <div style="text-align: center">
+                <i>
+                  <p>
+                    You may screenshot it and complete the activity at another
+                    place
+                  </p>
+                </i>
+              </div>
             </div>
           </Dialog>
         </div>
