@@ -15,7 +15,7 @@ const data = ref({
     lat: 1.309923836873561,
     lon: 103.8637688698451,
     alt: 15.1,
-    range: 20,
+    range: 30,
     img: "location1.png",
     activity_img: "location1_activity.png",
     seq: 1,
@@ -34,7 +34,7 @@ const data = ref({
     img: "location2.png",
     activity_img: "location2_activity.png",
 
-    range: 20,
+    range: 30,
     seq: 2,
     task: {
       "Do the #photocropchallenge as a group!<br><br>Reference Video: ": 2,
@@ -54,7 +54,7 @@ const data = ref({
     img: "location3.png",
     activity_img: "location3_activity.png",
 
-    range: 20,
+    range: 30,
     seq: 3,
     task: {
       "Take a group jump shot in the reflection of the glass outside the mall!": 2,
@@ -72,7 +72,7 @@ const data = ref({
     img: "location4.png",
     activity_img: "location4_activity.png",
 
-    range: 20,
+    range: 30,
     seq: 4,
     task: {
       "Draw each member of your group in 30 seconds! <br>Post it on IG and tag @hopeuni!": 2,
@@ -97,7 +97,7 @@ const data = ref({
     img: "location5.png",
     activity_img: "location5_activity.png",
 
-    range: 20,
+    range: 30,
     seq: 5,
     task: {
       "As a group, sit down in a circle and face outwards. Link your arms and try to stand up together!<br><br>Reference Video: ": 3,
@@ -130,7 +130,7 @@ const data = ref({
     img: "location7.png",
     activity_img: "location7_activity.png",
 
-    range: 20,
+    range: 40,
     seq: 7,
     task: {
       "Find items that add up to $49.75 in total! <br>(show their price tags in submissions)": 5,
@@ -248,6 +248,17 @@ onMounted(async () => {
   const sortedDataObject = Object.fromEntries(sortedData);
   data.value = sortedDataObject;
 });
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 <template>
