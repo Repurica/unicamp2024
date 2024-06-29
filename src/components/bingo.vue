@@ -130,7 +130,7 @@ const data = ref({
     img: "location7.png",
     activity_img: "location7_activity.png",
 
-    range: 10,
+    range: 20,
     seq: 7,
     task: {
       "Find items that add up to $49.75 in total! <br>(show their price tags in submissions)": 5,

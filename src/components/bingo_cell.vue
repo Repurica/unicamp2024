@@ -69,6 +69,7 @@ function showImage(activity_img) {
       <div v-else>
         {{ location }}
       </div>
+      {{ distance }}
     </template>
 
     <template #content>
