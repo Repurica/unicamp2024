@@ -112,7 +112,7 @@ const data = ref({
     img: "location6.png",
     activity_img: "location6_activity.png",
 
-    range: 20,
+    range: 30,
     seq: 6,
     task: {
       'Recreate the mannequin poses<br><br><Image alt="user header" src="mannequin.png" preview />': 2,
