@@ -103,8 +103,6 @@ function showImage(activity_img) {
             dismissableMask
           >
             <div class="card">
-
-
               <Accordion :value="accordion_one" multiple>
                 <div v-for="(value, key) of task">
                   <AccordionPanel
@@ -194,7 +192,7 @@ function showImage(activity_img) {
                 <i>
                   <p>
                     You may screenshot it and complete the activity at another
-                    place
+                    place!!
                   </p>
                 </i>
               </div>

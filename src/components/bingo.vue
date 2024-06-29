@@ -7,8 +7,7 @@ import Button from "primevue/button";
 const currentLocation = ref();
 const isFunctionFinished = ref(false);
 const geodata = ref();
-const cheat=ref(false);
-
+const cheat = ref(false);
 
 const data = ref({
   "Location 1": {
@@ -18,7 +17,7 @@ const data = ref({
     alt: 15.1,
     range: 10,
     img: "location1.png",
-    activity_img:"location1_activity.png",
+    activity_img: "location1_activity.png",
     seq: 1,
     task: {
       "Bless someone wearing a cap!": 2,
@@ -33,7 +32,7 @@ const data = ref({
     lon: 103.8640346,
     alt: 15.1,
     img: "location2.png",
-    activity_img:"location2_activity.png",
+    activity_img: "location2_activity.png",
 
     range: 10,
     seq: 2,
@@ -53,7 +52,7 @@ const data = ref({
     lon: 103.8632549910819,
     alt: 13.7,
     img: "location3.png",
-    activity_img:"location3_activity.png",
+    activity_img: "location3_activity.png",
 
     range: 10,
     seq: 3,
@@ -71,7 +70,7 @@ const data = ref({
     // lon: 103.8638804814292,
     alt: 19.8,
     img: "location4.png",
-    activity_img:"location4_activity.png",
+    activity_img: "location4_activity.png",
 
     range: 10,
     seq: 4,
@@ -96,7 +95,7 @@ const data = ref({
     lon: 103.8641684,
     alt: 15.1,
     img: "location5.png",
-    activity_img:"location5_activity.png",
+    activity_img: "location5_activity.png",
 
     range: 10,
     seq: 5,
@@ -111,13 +110,13 @@ const data = ref({
     lon: 103.86403375599417,
     alt: 15.1,
     img: "location6.png",
-    activity_img:"location6_activity.png",
+    activity_img: "location6_activity.png",
 
     range: 10,
     seq: 6,
     task: {
       'Recreate the mannequin poses<br><br><Image alt="user header" src="mannequin.png" preview />': 2,
-      "Add the total price of all the items on the Tim Ho Wan Menu and use your bodies to form this total price!<br><br><Image alt=\"user header\" src=\"TimHoWan.jpg\" preview />": 3,
+      'Add the total price of all the items on the Tim Ho Wan Menu and use your bodies to form this total price!<br><br><Image alt="user header" src="TimHoWan.jpg" preview />': 3,
     },
   },
 
@@ -129,7 +128,7 @@ const data = ref({
     lon: 103.86384749088543,
     alt: 15.1,
     img: "location7.png",
-    activity_img:"location7_activity.png",
+    activity_img: "location7_activity.png",
 
     range: 10,
     seq: 7,
@@ -142,11 +141,11 @@ const data = ref({
 
   "Special Location": {
     location: "Rooftop Garden",
-    lat:  1.3100988274447354,
+    lat: 1.3100988274447354,
     lon: 103.86400251566495,
     alt: 24.1,
     img: "location8.png",
-    activity_img:"location8_activity.png",
+    activity_img: "location8_activity.png",
 
     range: 10,
     seq: 8,
@@ -307,8 +306,8 @@ onMounted(async () => {
       </ol>
     </template>
   </Card>
-  <div style="display: flex; justify-content: center;">
-    <Button @click="cheat=!cheat" style="margin-top: 10px;">Cheat</Button>
+  <div style="display: flex; justify-content: center">
+    <Button @click="cheat = !cheat" style="margin-top: 10px">Cheat</Button>
   </div>
 
   <div
