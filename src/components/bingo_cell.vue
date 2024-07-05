@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, onMounted } from "vue";
+import { ref, defineProps, onMounted, watch } from "vue";
 import Card from "primevue/card";
 import Dialog from "primevue/dialog";
 import Button from "primevue/button";
@@ -11,6 +11,10 @@ import AccordionContent from "primevue/accordioncontent";
 
 import tiktok1 from "./tiktok1.vue";
 import tiktok2 from "./tiktok2.vue";
+
+import { useActivityStore } from "@/stores/data";
+const { data, setCheats } = useActivityStore();
+
 const props = defineProps({
   // Define your props here
   name: String,
@@ -29,7 +33,6 @@ const props = defineProps({
 const visible = ref(false);
 const accordion_one = ref([]);
 const accordion_status = ref({});
-const img_preview = ref(false);
 accordion_status.value = Object.keys(props.task).reduce((acc, key) => {
   acc[key] = false;
   return acc;
@@ -41,10 +44,14 @@ function toggleAccordionPanel(key) {
     accordion_one.value.splice(accordion_one.value.indexOf(key), 1);
   }
 }
-
-function showImage(activity_img) {
-  document.getElementById(activity_img).click();
-}
+watch(
+  () => props.distance,
+  (newVal) => {
+    if (newVal > props.range) {
+      setCheats(true);
+    }
+  }
+);
 </script>
 
 <template>
@@ -56,7 +63,6 @@ function showImage(activity_img) {
     </template>
     <template #title>
       <!-- debug -->
-
       <div
         v-if="
           (distance > range || (Math.abs(alt - youralt) > 3 && !cheat)) &&
@@ -64,7 +70,6 @@ function showImage(activity_img) {
         "
       >
         {{ name }}
-        <!-- <div v-if="!range"> -->
       </div>
       <div v-else>
         {{ location }}
