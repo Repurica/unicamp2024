@@ -49,7 +49,6 @@ watch(
   () => props.distance,
   (newVal) => {
     if (newVal <= props.range) {
-      alert(props.location);
       setCheats(props.index);
     }
   }
