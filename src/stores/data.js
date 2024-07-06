@@ -71,7 +71,7 @@ export const useActivityStore = defineStore("data", () => {
       img: "location4.png",
       activity_img: "location4_activity.png",
 
-      range: 30,
+      range: 40,
       seq: 4,
       task: {
         "Draw each member of your group in 30 seconds! <br>Post it on IG and tag @hopeuni!": 2,

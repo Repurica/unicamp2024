@@ -195,6 +195,7 @@ const phoneModel = getPhoneModel();
       style="padding: 3px; width: 95%"
     >
       <bingo_cell
+        :index="index"
         :task="item.task"
         :location="item.location"
         :alt="item.alt"

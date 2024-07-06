@@ -28,6 +28,7 @@ const props = defineProps({
   alt: Number,
   youralt: Number,
   activity_img: String,
+  index:String
 });
 
 const visible = ref(false);
@@ -47,8 +48,9 @@ function toggleAccordionPanel(key) {
 watch(
   () => props.distance,
   (newVal) => {
-    if (newVal > props.range) {
-      setCheats(true);
+    if (newVal <= props.range) {
+      alert(props.location);
+      setCheats(props.index);
     }
   }
 );
@@ -70,6 +72,8 @@ watch(
         "
       >
         {{ name }}
+        {{cheat}}
+        {{index}}
       </div>
       <div v-else>
         {{ location }}
