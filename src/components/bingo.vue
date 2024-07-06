@@ -10,7 +10,7 @@ const currentLocation = ref();
 const isFunctionFinished = ref(false);
 const geodata = ref();
 const cheat_state = ref(false);
-const { data, setAllCheats } = useActivityStore();
+const { data, setAllCheats, clearLocalStorage } = useActivityStore();
 console.log(data, 123);
 
 function haversine(lat1, lon1, lat2, lon2, radius = 6371) {
@@ -177,7 +177,11 @@ const phoneModel = getPhoneModel();
       >Cheat</Button
     >
   </div>
-
+  <div style="display: flex; justify-content: center">
+    <Button @click="clearLocalStorage" style="margin-top: 10px"
+      >Clear LocalStorage</Button
+    >
+  </div>
   <div
     v-if="currentLocation"
     style="

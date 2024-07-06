@@ -72,7 +72,6 @@ watch(
       >
         {{ name }}
         {{cheat}}
-        {{index}}
       </div>
       <div v-else>
         {{ location }}
