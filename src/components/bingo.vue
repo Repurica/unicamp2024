@@ -12,6 +12,9 @@ const geodata = ref();
 const cheat_state = ref(false);
 const { data, setAllCheats, clearLocalStorage } = useActivityStore();
 console.log(data, 123);
+const refreshPage = () => {
+  location.reload(); // Reloads the current page
+};
 
 function haversine(lat1, lon1, lat2, lon2, radius = 6371) {
   // Convert latitude and longitude from degrees to radians
@@ -178,7 +181,12 @@ const phoneModel = getPhoneModel();
     >
   </div>
   <div style="display: flex; justify-content: center">
-    <Button @click="clearLocalStorage" style="margin-top: 10px"
+    <Button
+      @click="
+        clearLocalStorage();
+        refreshPage();
+      "
+      style="margin-top: 10px"
       >Clear LocalStorage</Button
     >
   </div>
