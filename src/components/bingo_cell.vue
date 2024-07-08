@@ -28,7 +28,7 @@ const props = defineProps({
   alt: Number,
   youralt: Number,
   activity_img: String,
-  index:String
+  index: String,
 });
 
 const visible = ref(false);
@@ -71,7 +71,7 @@ watch(
         "
       >
         {{ name }}
-        {{cheat}}
+        {{ cheat }}
       </div>
       <div v-else>
         {{ location }}
@@ -128,8 +128,8 @@ watch(
 
                     <AccordionContent
                       v-if="
-                        key ==
-                        'Do the #photocropchallenge as a group!<br><br>Reference Video: '
+                        index ==
+                        'Location 2'
                       "
                     >
                       <p v-html="key" class="m-0"></p>
@@ -149,8 +149,8 @@ watch(
 
                     <AccordionContent
                       v-else-if="
-                        key ==
-                        'As a group, sit down in a circle and face outwards. Link your arms and try to stand up together!<br><br>Reference Video: '
+                        index ==
+                        'Location 5'
                       "
                     >
                       <p v-html="key" class="m-0"></p>
