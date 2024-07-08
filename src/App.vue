@@ -1,11 +1,11 @@
 <script setup>
 import bing from "./components/bingo.vue";
-
+import test from "./components/test.vue";
 </script>
 
 
 <template>
-  <bing> </bing>
+  <test> </test>
 </template>
 
 <style scoped>

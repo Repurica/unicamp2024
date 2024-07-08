@@ -10,6 +10,8 @@ const currentLocation = ref();
 const isFunctionFinished = ref(false);
 const geodata = ref();
 const cheat_state = ref(false);
+const updating = ref("Getting GPS");
+const update_status = ref();
 const { data, setAllCheats, clearLocalStorage } = useActivityStore();
 console.log(data, 123);
 const refreshPage = () => {
@@ -42,6 +44,16 @@ function haversine(lat1, lon1, lat2, lon2, radius = 6371) {
 
 onMounted(async () => {
   // Function to handle successful retrieval of location
+
+  setInterval(() => {
+    if (update_status.value.includes("...")) {
+      update_status.value = updating.value.replace(/\./g, "");
+    } else {
+      update_status.value += ".";
+    }
+    console.log(update_status.value);
+  }, 1000);
+
   function successCallback(position) {
     if (geodata.value) {
       const keys = Object.keys(position.coords);
@@ -79,6 +91,10 @@ onMounted(async () => {
         lon: 1,
       };
     }
+    update_status.value = "Updated";
+    setTimeout(() => {
+      update_status.value = updating.value;
+    }, 1000);
   }
 
   // Function to handle errors in retrieving location
@@ -89,7 +105,7 @@ onMounted(async () => {
   // Options for geolocation request
   var options = {
     enableHighAccuracy: true, // Use high-accuracy mode if available
-    maxWait:3000, // Set timeout to 5 seconds
+    maxWait: 3000, // Set timeout to 5 seconds
     maximumAge: 0, // Do not use cached location
     desiredAccuracy: 20,
   };
@@ -250,5 +266,20 @@ const phoneModel = getPhoneModel();
     <p style="color: white">Loading your location... Plz wait</p>
   </div>
 
-  
+  <div style="position: fixed; bottom: 10px; right: 10px; z-index: 1100">
+    <Card
+      style="
+        background-color: #10b981;
+        color: white;
+        font-size: 1rem;
+        font-family: inherit;
+        font-feature-settings: inherit;
+        text-align: center;
+      "
+    >
+      <template #content>
+        <p class="m-0">{{ update_status }}</p>
+      </template>
+    </Card>
+  </div>
 </template>
