@@ -5,13 +5,14 @@ import ProgressSpinner from "primevue/progressspinner";
 import Card from "primevue/card";
 import Button from "primevue/button";
 import { useActivityStore } from "@/stores/data";
+import thumb_up from "./thumb_up.vue";
 
 const currentLocation = ref();
 const isFunctionFinished = ref(false);
 const geodata = ref();
 const cheat_state = ref(false);
-const updating = ref("Getting GPS");
-const update_status = ref();
+const updating = ref("Getting\nGPS");
+const update_status = ref(false);
 const { data, setAllCheats, clearLocalStorage } = useActivityStore();
 console.log(data, 123);
 const refreshPage = () => {
@@ -46,12 +47,12 @@ onMounted(async () => {
   // Function to handle successful retrieval of location
 
   setInterval(() => {
-    if (update_status.value.includes("...")) {
-      update_status.value = updating.value.replace(/\./g, "");
+    if (updating.value.includes("...")) {
+      updating.value = updating.value.replace(/\./g, "");
     } else {
-      update_status.value += ".";
+      updating.value += ".";
     }
-    console.log(update_status.value);
+    console.log(updating.value);
   }, 1000);
 
   function successCallback(position) {
@@ -91,10 +92,11 @@ onMounted(async () => {
         lon: 1,
       };
     }
-    update_status.value = "Updated";
+    update_status.value = true;
+
     setTimeout(() => {
-      update_status.value = updating.value;
-    }, 1000);
+      update_status.value = false;
+    }, 1500);
   }
 
   // Function to handle errors in retrieving location
@@ -266,19 +268,49 @@ const phoneModel = getPhoneModel();
     <p style="color: white">Loading your location... Plz wait</p>
   </div>
 
-  <div style="position: fixed; bottom: 10px; right: 10px; z-index: 1100">
+  <div
+    style="
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 1100;
+      width: 100px;
+      height: 100px;
+    "
+  >
     <Card
       style="
-        background-color: #10b981;
-        color: white;
-        font-size: 1rem;
+        border: 2px solid #10b981;
+        color: black;
+        font-size: 0.5rem;
         font-family: inherit;
         font-feature-settings: inherit;
         text-align: center;
+        width: 100%;
+        height: 100%;
       "
     >
       <template #content>
-        <p class="m-0">{{ update_status }}</p>
+        <div v-if="!update_status" style="height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <div class="card flex justify-center">
+            <ProgressSpinner
+              style="width: 30px; height: 30px"
+              strokeWidth="8"
+              fill="transparent"
+              animationDuration=".5s"
+              aria-label="Custom ProgressSpinner"
+              class="--p-progressspinner-color-3"
+            />
+          </div>
+
+          <p class="m-0" style="white-space: pre-wrap">{{ updating }}</p>
+        </div>
+
+        <div v-else style="height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <thumb_up></thumb_up>
+
+          <p class="m-0">GPS<br />Updated!</p>
+        </div>
       </template>
     </Card>
   </div>

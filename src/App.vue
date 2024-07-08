@@ -1,6 +1,7 @@
 <script setup>
 import bing from "./components/bingo.vue";
 import test from "./components/test.vue";
+
 </script>
 
 
