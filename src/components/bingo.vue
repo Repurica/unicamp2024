@@ -145,10 +145,14 @@ const phoneModel = getPhoneModel();
       <strong>Note:</strong>
       <ol style="line-height: 1.5">
         <li>Please <strong>allow location permission!</strong></li>
-        <li>You may click on the image to enlarge it</li>
+        <li>Please <strong>wait for 5 seconds</strong> at the location for GPS to sync!</li>
         <li>
-          You must be sufficiently near the location to unlock the activities
+          You must be <strong>sufficiently near the location</strong> to unlock the activities
         </li>
+        <li>
+          Once unlocked, you may find wherever is convenient to complete the task
+        </li>
+        <li>You may click on the image to enlarge it</li>
         <li>
           Please refrain from <strong>hampering business operations</strong> by
           completing tasks in empty spaces
@@ -164,8 +168,8 @@ const phoneModel = getPhoneModel();
           on tele
         </li>
         <li>
-          Tech issue telegram
-          <a href="https://t.me/repurika" target="_blank">Jinming</a>
+          If you face difficulties to unlock the task, please telegram
+          <a href="https://t.me/repurika" target="_blank">@repurika</a>
         </li>
       </ol>
     </template>
