@@ -13,8 +13,13 @@ import tiktok1 from "./tiktok1.vue";
 import tiktok2 from "./tiktok2.vue";
 
 import { useActivityStore } from "@/stores/data";
-const { data, setCheats } = useActivityStore();
+const { activity_count, setCheats, increase_activity_count } =
+  useActivityStore();
+const activity_serial_list = ref([]);
+const activity_count_start = ref(0);
+const activity_count_end = ref(0);
 
+console.log(activity_count);
 const props = defineProps({
   // Define your props here
   name: String,
@@ -30,6 +35,26 @@ const props = defineProps({
   activity_img: String,
   index: String,
 });
+
+activity_count_start.value = parseInt(activity_count);
+
+Object.keys(props.task).forEach(() => {
+  console.log(activity_count,"ppp");
+  increase_activity_count();
+});
+
+activity_count_end.value = parseInt(activity_count);
+console.log(activity_count_start.value, activity_count_end.value);
+
+for (
+  let i = activity_count_start.value + 1;
+  i <= activity_count_end.value;
+  i++
+) {
+  activity_serial_list.value.push(i);
+  console.log(i, "---");
+}
+console.log(activity_serial_list.value, 321);
 
 const visible = ref(false);
 const accordion_one = ref([]);
@@ -57,7 +82,6 @@ watch(
 
 <template>
   <!-- Your template code here -->
-
   <Card>
     <template #header>
       <Image alt="user header" :src="img" style="" preview />
@@ -77,6 +101,7 @@ watch(
         {{ location }}
       </div>
       {{ distance }}
+      {{ activity_count }}
     </template>
 
     <template #content>
@@ -119,19 +144,17 @@ watch(
                   >
                     <AccordionHeader class="accordion-header">
                       <p style="width: 75%">
-                        {{ "Activity " + (Object.keys(task).indexOf(key) + 1) }}
+                        {{
+                          "Activity " +
+                          activity_serial_list[Object.keys(task).indexOf(key)]
+                        }}
                       </p>
                       <p style="text-align: right; min-width: 55px">
                         {{ value }} pts.
                       </p>
                     </AccordionHeader>
 
-                    <AccordionContent
-                      v-if="
-                        index ==
-                        'Location 2'
-                      "
-                    >
+                    <AccordionContent v-if="index == 'Location 2'">
                       <p v-html="key" class="m-0"></p>
                       <p class="m-0">
                         <small
@@ -147,12 +170,7 @@ watch(
                       <tiktok1></tiktok1>
                     </AccordionContent>
 
-                    <AccordionContent
-                      v-else-if="
-                        index ==
-                        'Location 5'
-                      "
-                    >
+                    <AccordionContent v-else-if="index == 'Location 5'">
                       <p v-html="key" class="m-0"></p>
                       <p class="m-0">
                         <small

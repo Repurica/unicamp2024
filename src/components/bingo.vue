@@ -156,9 +156,14 @@ const phoneModel = getPhoneModel();
       <strong>locations</strong> and complete <strong>tasks</strong> for banana
       bucks! <br /><br />
       Do submit proofs of completed tasks to your
-      <strong>respective Segment ICs</strong> via telegram. <br />Please also
-      <strong>collect your earned banana bucks</strong> from them at the
-      playground before heading back to kallang riverside park!
+      <strong>respective Segment ICs</strong> via telegram.
+      <ul>
+        <li>team 1-6: <a href="https://t.me/ryantjh">@ryantjh</a> </li>
+        <li>team 7-12: <a href="https://t.me/Staninloo">@Staninloo</a> </li>
+        <li>team 13-16: <a href="https://t.me/audreyjoshea">@audreyjoshea</a> </li>
+      </ul>
+      <br />Please also <strong>collect your earned banana bucks</strong> from
+      them at the playground before heading back to kallang riverside park!
 
       <br /><br />
       <strong>Note:</strong>
@@ -291,7 +296,16 @@ const phoneModel = getPhoneModel();
       "
     >
       <template #content>
-        <div v-if="!update_status" style="height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div
+          v-if="!update_status"
+          style="
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          "
+        >
           <div class="card flex justify-center">
             <ProgressSpinner
               style="width: 30px; height: 30px"
@@ -306,7 +320,16 @@ const phoneModel = getPhoneModel();
           <p class="m-0" style="white-space: pre-wrap">{{ updating }}</p>
         </div>
 
-        <div v-else style="height: 100px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div
+          v-else
+          style="
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          "
+        >
           <thumb_up></thumb_up>
 
           <p class="m-0">GPS<br />Updated!</p>

@@ -320,7 +320,7 @@ export const useActivityStore = defineStore("data", () => {
     },
   });
 
-
+  const activity_count=ref(0)
   const isiPhone = /iPhone/i.test(navigator.userAgent);
 
   if(isiPhone){
@@ -502,6 +502,8 @@ export const useActivityStore = defineStore("data", () => {
       data.value[location].cheat = true;
     }
   };
-
-  return { data, setAllCheats, setCheats,clearLocalStorage };
+  const increase_activity_count=()=>{
+    activity_count.value+=1
+  }
+  return { data,activity_count, setAllCheats, setCheats,clearLocalStorage,increase_activity_count };
 });
