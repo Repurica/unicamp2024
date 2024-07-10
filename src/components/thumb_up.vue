@@ -1,6 +1,6 @@
 <template>
   <div style="display: flex; justify-content: center; ">
-    <a href="#" target="_blank" class="thumb fa fa-thumbs-up"></a>
+    <a class="thumb fa fa-thumbs-up"></a>
   </div>
 </template>
 

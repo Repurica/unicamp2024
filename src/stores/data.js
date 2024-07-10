@@ -329,7 +329,7 @@ export const useActivityStore = defineStore("data", () => {
             Untangle yourselves without letting go of each other's hands!": [
           18, 3,
         ],
-        "<h3>Submit as Video:</h3>One person to piggyback another person and walk from the entrance to this Aperia sign!<br><br><Image alt='user header' src='aperia_sign.png' preview />":
+        "<h3>Submit as Video:</h3>One person to piggyback another person and walk from the entrance of the rooftop to this Aperia sign!<br><br><Image alt='user header' src='aperia_sign.png' preview />":
           [19, 2],
         "<h3>Submit as Video:</h3>As a group, complete 10 pushups, 10 crunches & 10 squats together!":
           [20, 3],

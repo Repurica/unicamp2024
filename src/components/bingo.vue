@@ -125,8 +125,18 @@ function getPhoneModel() {
   }
 }
 
-// Call the function to retrieve the phone model
 const phoneModel = getPhoneModel();
+
+const clear_count = ref(0);
+
+function clearAndRefresh() {
+  clear_count.value++;
+  if (clear_count.value == 5) {
+    clearLocalStorage();
+    refreshPage();
+    clear_count.value = 0;
+  }
+}
 </script>
 
 <template>
@@ -188,11 +198,11 @@ const phoneModel = getPhoneModel();
         <li>
           For any questions, please approach our respective segment ICs
 
-          <a href="https://t.me/Hyadaintan" target="_blank">@Hyadaintan</a>
+          <a href="https://t.me/ryantjh" target="_blank">@ryantjh</a>
           /
           <a href="https://t.me/Staninloo" target="_blank">@Staninloo</a>
           /
-          <a href="https://t.me/ryantjh" target="_blank">@ryantjh</a>
+          <a href="https://t.me/audreyjoshea" target="_blank">@audreyjoshea</a>
           on tele
         </li>
         <li>
@@ -281,6 +291,7 @@ const phoneModel = getPhoneModel();
       width: 100px;
       height: 100px;
     "
+    @click="clearAndRefresh"
   >
     <Card
       style="
