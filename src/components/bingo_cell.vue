@@ -13,8 +13,9 @@ import tiktok1 from "./tiktok1.vue";
 import tiktok2 from "./tiktok2.vue";
 
 import { useActivityStore } from "@/stores/data";
-const { data, setCheats } = useActivityStore();
-
+const { activity_count, setCheats,increase_activity_count } = useActivityStore();
+increase_activity_count()
+console.log(activity_count)
 const props = defineProps({
   // Define your props here
   name: String,
@@ -57,7 +58,6 @@ watch(
 
 <template>
   <!-- Your template code here -->
-
   <Card>
     <template #header>
       <Image alt="user header" :src="img" style="" preview />
@@ -77,6 +77,7 @@ watch(
         {{ location }}
       </div>
       {{ distance }}
+      {{ activity_count }}
     </template>
 
     <template #content>
@@ -126,12 +127,7 @@ watch(
                       </p>
                     </AccordionHeader>
 
-                    <AccordionContent
-                      v-if="
-                        index ==
-                        'Location 2'
-                      "
-                    >
+                    <AccordionContent v-if="index == 'Location 2'">
                       <p v-html="key" class="m-0"></p>
                       <p class="m-0">
                         <small
@@ -147,12 +143,7 @@ watch(
                       <tiktok1></tiktok1>
                     </AccordionContent>
 
-                    <AccordionContent
-                      v-else-if="
-                        index ==
-                        'Location 5'
-                      "
-                    >
+                    <AccordionContent v-else-if="index == 'Location 5'">
                       <p v-html="key" class="m-0"></p>
                       <p class="m-0">
                         <small
