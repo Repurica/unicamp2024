@@ -126,7 +126,12 @@ watch(
                       </p>
                     </AccordionHeader>
 
-                    <AccordionContent v-if="key == '<h3>Submit as Video:</h3>Do the #photocropchallenge as a group!<br><br>Reference Video: '">
+                    <AccordionContent
+                      v-if="
+                        key ==
+                        '<h3>Submit as Video:</h3>Do the #photocropchallenge as a group!<br><br>Reference Video: '
+                      "
+                    >
                       <p v-html="key" class="m-0"></p>
                       <p class="m-0">
                         <small
@@ -188,9 +193,10 @@ watch(
               </div>
               <div style="text-align: center">
                 <i>
-                  <p>
-                    You may screenshot it and complete the activity at another
-                    place!!
+                  <p style="font-size: 0.8rem">
+                    The activity will remain unlocked!<br />
+                    You can also screenshot it and complete the activity at
+                    another place!
                   </p>
                 </i>
               </div>
