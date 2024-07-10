@@ -12,48 +12,47 @@ onMounted(() => {
 <template>
   <blockquote
     class="tiktok-embed"
-    cite="https://www.tiktok.com/@deanobballin24/video/6990776735746772229"
-    data-video-id="6990776735746772229"
+    cite="https://www.tiktok.com/@groovefittv/video/7317700123998358816"
+    data-video-id="7317700123998358816"
     style="max-width: 605px; min-width: 325px"
   >
     <section>
       <a
         target="_blank"
-        title="@deanobballin24"
-        href="https://www.tiktok.com/@deanobballin24?refer=embed"
-        >@deanobballin24</a
+        title="@groovefittv"
+        href="https://www.tiktok.com/@groovefittv?refer=embed"
+        >@groovefittv</a
       >
-      instagram 👉🏼deanobballin
+      Round 2 - No Niamh’s were harmed in the making of this video😂
       <a
-        title="welcomeback"
+        title="watchtillend"
         target="_blank"
-        href="https://www.tiktok.com/tag/welcomeback?refer=embed"
-        >#WelcomeBack</a
-      >
-      ChiliDogYumPlz
-      <a
-        title="challenges"
-        target="_blank"
-        href="https://www.tiktok.com/tag/challenges?refer=embed"
-        >#challenges</a
+        href="https://www.tiktok.com/tag/watchtillend?refer=embed"
+        >#watchtillend</a
       >
       <a
-        title="photocrop"
+        title="fyp"
         target="_blank"
-        href="https://www.tiktok.com/tag/photocrop?refer=embed"
-        >#photocrop</a
+        href="https://www.tiktok.com/tag/fyp?refer=embed"
+        >#fyp</a
       >
       <a
-        title="foryou"
+        title="photocropchallenge"
         target="_blank"
-        href="https://www.tiktok.com/tag/foryou?refer=embed"
-        >#foryou</a
+        href="https://www.tiktok.com/tag/photocropchallenge?refer=embed"
+        >#photocropchallenge</a
       >
       <a
-        title="trendy"
+        title="photocropfilter"
         target="_blank"
-        href="https://www.tiktok.com/tag/trendy?refer=embed"
-        >#trendy</a
+        href="https://www.tiktok.com/tag/photocropfilter?refer=embed"
+        >#photocropfilter</a
+      >
+      <a
+        title="attention"
+        target="_blank"
+        href="https://www.tiktok.com/tag/attention?refer=embed"
+        >#attention</a
       >
       <a
         title="viral"
@@ -62,14 +61,37 @@ onMounted(() => {
         >#viral</a
       >
       <a
+        title="viralvideo"
         target="_blank"
-        title="♬ The Hustle - Van McCoy"
-        href="https://www.tiktok.com/music/The-Hustle-244641803705147393?refer=embed"
-        >♬ The Hustle - Van McCoy</a
+        href="https://www.tiktok.com/tag/viralvideo?refer=embed"
+        >#viralvideo</a
+      >
+      <a
+        title="funny"
+        target="_blank"
+        href="https://www.tiktok.com/tag/funny?refer=embed"
+        >#funny</a
+      >
+      <a
+        title="funnyvideo"
+        target="_blank"
+        href="https://www.tiktok.com/tag/funnyvideo?refer=embed"
+        >#funnyvideo</a
+      >
+      <a
+        title="trending"
+        target="_blank"
+        href="https://www.tiktok.com/tag/trending?refer=embed"
+        >#trending</a
+      >
+      <a
+        target="_blank"
+        title="♬ The Benny Hill Show - The Edwin Davids Jazz Band"
+        href="https://www.tiktok.com/music/The-Benny-Hill-Show-6835092391427311617?refer=embed"
+        >♬ The Benny Hill Show - The Edwin Davids Jazz Band</a
       >
     </section>
   </blockquote>
-
 </template>
 
 <style>

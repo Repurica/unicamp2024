@@ -14,7 +14,6 @@ const cheat_state = ref(false);
 const updating = ref("Getting\nGPS");
 const update_status = ref(false);
 const { data, setAllCheats, clearLocalStorage } = useActivityStore();
-console.log(data, 123);
 const refreshPage = () => {
   location.reload(); // Reloads the current page
 };
@@ -52,7 +51,6 @@ onMounted(async () => {
     } else {
       updating.value += ".";
     }
-    console.log(updating.value);
   }, 1000);
 
   function successCallback(position) {
@@ -80,7 +78,6 @@ onMounted(async () => {
       lon: position.coords.longitude,
       alt: position.coords.altitude,
     };
-    console.log(currentLocation.value);
     isFunctionFinished.value = true;
     console.log(currentLocation.value);
     if (!currentLocation.value.lat) {
@@ -158,9 +155,11 @@ const phoneModel = getPhoneModel();
       Do submit proofs of completed tasks to your
       <strong>respective Segment ICs</strong> via telegram.
       <ul>
-        <li>team 1-6: <a href="https://t.me/ryantjh">@ryantjh</a> </li>
-        <li>team 7-12: <a href="https://t.me/Staninloo">@Staninloo</a> </li>
-        <li>team 13-16: <a href="https://t.me/audreyjoshea">@audreyjoshea</a> </li>
+        <li>team 1-6: <a href="https://t.me/ryantjh">@ryantjh</a></li>
+        <li>team 7-12: <a href="https://t.me/Staninloo">@Staninloo</a></li>
+        <li>
+          team 13-16: <a href="https://t.me/audreyjoshea">@audreyjoshea</a>
+        </li>
       </ul>
       <br />Please also <strong>collect your earned banana bucks</strong> from
       them at the playground before heading back to kallang riverside park!
