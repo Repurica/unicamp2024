@@ -338,18 +338,27 @@ export const useActivityStore = defineStore("data", () => {
     },
   });
 
+  const cheat_states = ref({
+    "Location 1": false,
+    "Location 2": false,
+    "Location 3": false,
+    "Location 4": false,
+    "Location 5": false,
+    "Location 6": false,
+    "Location 7": false,
+    "Special Location": false,
+  });
   const activity_count = ref(0);
   const isiPhone = /iPhone/i.test(navigator.userAgent);
 
   if (isiPhone) {
-
     data.value["Location 4"].range = 50;
-
-
   }
 
   if (localStorage.getItem("state")) {
-    data.value = JSON.parse(localStorage.getItem("state")).data.data;
+    cheat_states.value = JSON.parse(
+      localStorage.getItem("state")
+    ).data.cheat_states;
   }
 
   const clearLocalStorage = () => {
@@ -358,24 +367,22 @@ export const useActivityStore = defineStore("data", () => {
 
   const setAllCheats = (state) => {
     for (const location in data.value) {
-      data.value[location].cheat = state;
+      cheat_states.value[location] = state;
     }
   };
 
   const setCheats = (location) => {
     if (data.value.hasOwnProperty(location)) {
-      data.value[location].cheat = true;
+      cheat_states.value[location] = true;
     }
   };
-  const increase_activity_count = () => {
-    activity_count.value += 1;
-  };
+
   return {
     data,
     activity_count,
+    cheat_states,
     setAllCheats,
     setCheats,
     clearLocalStorage,
-    increase_activity_count,
   };
 });

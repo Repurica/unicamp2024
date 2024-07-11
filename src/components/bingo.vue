@@ -13,7 +13,8 @@ const geodata = ref();
 const cheat_state = ref(false);
 const updating = ref("Getting\nGPS");
 const update_status = ref(false);
-const { data, setAllCheats, clearLocalStorage } = useActivityStore();
+const { data, cheat_states, setAllCheats, clearLocalStorage } =
+  useActivityStore();
 const refreshPage = () => {
   location.reload(); // Reloads the current page
 };
@@ -258,7 +259,7 @@ function clearAndRefresh() {
         :name="index"
         :seq="item.seq"
         :range="item.range"
-        :cheat="item.cheat"
+        :cheat="cheat_states[index]"
         :activity_img="item.activity_img"
         :distance="
           haversine(

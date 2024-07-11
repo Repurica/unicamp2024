@@ -13,6 +13,7 @@ watch(
   pinia.state,
   (state) => {
     localStorage.setItem("state", JSON.stringify(state));
+    console.log("state saved");
   },
   { deep: true }
 );

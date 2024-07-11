@@ -1,8 +1,6 @@
 <script setup>
 import bing from "./components/bingo.vue";
-
 </script>
-
 
 <template>
   <bing> </bing>

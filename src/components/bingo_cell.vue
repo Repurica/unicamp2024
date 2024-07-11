@@ -75,7 +75,6 @@ watch(
       <div v-else>
         {{ location }}
       </div>
-      <small>distance to location: {{ distance }}</small>
     </template>
 
     <template #content>
