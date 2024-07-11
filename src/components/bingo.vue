@@ -140,7 +140,7 @@ function clearAndRefresh() {
 </script>
 
 <template>
-  <div v-if="geodata">
+  <!-- <div v-if="geodata">
     <p>phoneModel: {{ phoneModel }}</p>
     <p id="latitude">Latitude: {{ geodata.latitude }}</p>
     <p id="longitude">Longitude: {{ geodata.longitude }}</p>
@@ -152,7 +152,7 @@ function clearAndRefresh() {
     <p id="heading">Heading: {{ geodata.heading }}</p>
     <p id="speed">Speed: {{ geodata.speed }}</p>
     <p id="timestamp">Timestamp: {{ geodata.timestamp }}</p>
-  </div>
+  </div> -->
   <Card style="width: 90%; margin: auto; margin-top: 20px">
     <template #title
       ><h1 style="text-align: center"><strong>Marketplace Quests</strong></h1>

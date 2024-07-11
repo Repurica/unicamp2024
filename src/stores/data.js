@@ -201,7 +201,7 @@ export const useActivityStore = defineStore("data", () => {
                 ": [5, 5],
         "<h3>Submit as Video:</h3>Have 5 people flip a coin together and land them all with the same side facing up (heads/tails)!":
           [6, 3],
-        "<h3>Submit as Picture:</h3>Find shops or products that match all letters of the alphabet. <br>Submit pictures of them in picture (or video) collage!":
+        "<h3>Submit pictures of them in a collage:</h3>Find shops or products that match all letters of the alphabet!":
           [7, 5],
       },
       cheat: false,

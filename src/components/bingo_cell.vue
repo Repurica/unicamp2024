@@ -71,12 +71,11 @@ watch(
         "
       >
         {{ name }}
-        {{ cheat }}
       </div>
       <div v-else>
         {{ location }}
       </div>
-      {{ distance }}
+      <small>distance to location: {{ distance }}</small>
     </template>
 
     <template #content>
