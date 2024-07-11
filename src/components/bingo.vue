@@ -178,10 +178,11 @@ function clearAndRefresh() {
       <br /><br />
       <strong>Note:</strong>
       <ol style="line-height: 1.5">
-        <li>Please <strong>allow location permission!</strong></li>
+        <li>Access with <strong>Android devices</strong> for better experience!</li>
+        <li>Please <strong>allow browser's location permission</strong> in settings!</li>
         <li>
           Please <strong>wait for 5 seconds</strong> at the location for GPS to
-          sync!
+          update!
         </li>
         <li>
           You must be <strong>sufficiently near the location</strong> to unlock
@@ -213,7 +214,7 @@ function clearAndRefresh() {
       </ol>
     </template>
   </Card>
-  <div style="display: flex; justify-content: center">
+  <!-- <div style="display: flex; justify-content: center">
     <Button
       @click="
         cheat_state = !cheat_state;
@@ -232,7 +233,7 @@ function clearAndRefresh() {
       style="margin-top: 10px"
       >Clear LocalStorage</Button
     >
-  </div>
+  </div> -->
   <div
     v-if="currentLocation"
     style="
