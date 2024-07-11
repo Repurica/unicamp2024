@@ -15,6 +15,10 @@ const updating = ref("Getting\nGPS");
 const update_status = ref(false);
 const { data, cheat_states, setAllCheats, clearLocalStorage } =
   useActivityStore();
+
+
+
+
 const refreshPage = () => {
   location.reload(); // Reloads the current page
 };

@@ -355,7 +355,8 @@ export const useActivityStore = defineStore("data", () => {
     data.value["Location 4"].range = 50;
   }
 
-  if (localStorage.getItem("state")) {
+  console.log(JSON.parse(localStorage.getItem("state")).data.cheat_states);
+  if (JSON.parse(localStorage.getItem("state")).data.cheat_states) {
     cheat_states.value = JSON.parse(
       localStorage.getItem("state")
     ).data.cheat_states;
