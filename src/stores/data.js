@@ -169,7 +169,7 @@ export const useActivityStore = defineStore("data", () => {
       lat: 1.309923836873561,
       lon: 103.8637688698451,
       alt: 15.1,
-      range: 20000,
+      range: 20,
       img: "location1.png",
       activity_img: "location1_activity.png",
       seq: 1,
