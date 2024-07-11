@@ -6,10 +6,10 @@ import basicSsl from "@vitejs/plugin-basic-ssl";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), basicSsl()],
-  server: {
-    host: "0.0.0.0",
-    https: true, // Enable HTTPS
-  },
+  // server: {
+  //   host: "0.0.0.0",
+  //   https: true, // Enable HTTPS
+  // },
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
