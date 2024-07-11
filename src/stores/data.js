@@ -165,7 +165,7 @@ export const useActivityStore = defineStore("data", () => {
 
   const data = ref({
     "Location 1": {
-      location: "7 Eleven",
+      location: "71 Eleven",
       lat: 1.309923836873561,
       lon: 103.8637688698451,
       alt: 15.1,
