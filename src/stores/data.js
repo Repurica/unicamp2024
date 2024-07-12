@@ -307,7 +307,7 @@ export const useActivityStore = defineStore("data", () => {
           [15, 5],
         "<h3>Submit as Video:</h3>Record yourselves saying 4 puns that involve cold storage products <br>(1 product for each pun)!":
           [16, 3],
-        "<h3>Submit as Picture:</h3>Find items that start with the first word of every word in this sentence: “cheam jia wei is the coolest person ever”.":
+        "<h3>Submit as Picture:</h3>Find items that start with the first letter of every word in this sentence: “cheam jia wei is the coolest person ever”.":
           [17, 3],
       },
       cheat: false,
