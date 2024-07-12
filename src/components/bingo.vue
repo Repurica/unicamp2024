@@ -215,6 +215,9 @@ function clearAndRefresh() {
           If you face difficulties to unlock the task, please telegram
           <a href="https://t.me/repurika" target="_blank">@repurika</a>
         </li>
+        <li>
+          if u see "...try higher and lower...", please refresh the page!"
+        </li>
       </ol>
     </template>
   </Card>

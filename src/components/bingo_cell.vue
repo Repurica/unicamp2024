@@ -66,8 +66,7 @@ watch(
       <!-- debug -->
       <div
         v-if="
-          (distance > range || (Math.abs(alt - youralt) > 3 && !cheat)) &&
-          !cheat
+          (distance > range ) && !cheat
         "
       >
         {{ name }}
@@ -87,9 +86,6 @@ watch(
           >m away from you! <br />Be <strong>{{ range }}</strong
           >m away from it to unlock the activities!
         </p>
-      </div>
-      <div v-else-if="Math.abs(alt - youralt) > 3 && !cheat">
-        <p class="m-0">You are close! Maybe try higher or lower?</p>
       </div>
 
       <div v-else>
